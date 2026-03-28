@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return greeting', () => {
-      expect(appController.getHello()).toBe('Hello Miitas Family 😎!');
+      expect(appController.getHello()).toBe('Hello Todo Task API!');
     });
   });
 });

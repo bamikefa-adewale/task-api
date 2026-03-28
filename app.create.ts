@@ -24,7 +24,7 @@ export function appCreate(app: INestApplication): void {
   const publicApiUrl = process.env.API_PUBLIC_URL?.trim();
 
   let swaggerConfig = new DocumentBuilder()
-    .setTitle('Task: MIITAS API')
+    .setTitle('Todo Task API')
     .setDescription(
       [
         '**OAS 3.0**',

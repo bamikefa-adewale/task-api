@@ -1,4 +1,4 @@
-### Task: MIITAS API — Tasks (Bearer required; JWT sub = owner)
+### Todo Task API — Tasks (Bearer required; JWT sub = owner)
 ### Run Google auth first and paste accessToken below.
 
 @baseUrl = http://localhost:3008/api/v1

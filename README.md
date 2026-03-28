@@ -1,6 +1,6 @@
-# Task API
+# Todo Task API
 
-Backend for **Task: MIITAS API**. Clients sign in with **Google** (ID token exchange); the server issues **JWT access and refresh tokens**, supports **refresh** and **logout**, and exposes **user-scoped tasks** (list with pagination/search, create, toggle done) for the signed-in user. All HTTP routes live under **`/api/v1`**; OpenAPI (Swagger) UI is at **`/api`**.
+Backend for **Todo Task API**. Clients sign in with **Google** (ID token exchange); the server issues **JWT access and refresh tokens**, supports **refresh** and **logout**, and exposes **user-scoped tasks** (list with pagination/search, create, toggle done) for the signed-in user. All HTTP routes live under **`/api/v1`**; OpenAPI (Swagger) UI is at **`/api`**.
 
 Stack: NestJS, TypeORM, PostgreSQL, Joi-validated config.
 

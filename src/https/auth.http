@@ -1,4 +1,4 @@
-### Task: MIITAS API — Auth (Google + session)
+### Todo Task API — Auth (Google + session)
 ### Base URL matches PORT in .env (default here: 3008). JWT audience/issuer must match host:port.
 
 @baseUrl = http://localhost:3008/api/v1
