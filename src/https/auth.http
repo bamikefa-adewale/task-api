@@ -1,0 +1,27 @@
+### Task: MIITAS API — Auth (Google + session)
+### Base URL matches PORT in .env (default here: 3008). JWT audience/issuer must match host:port.
+
+@baseUrl = http://localhost:3008/api/v1
+@accessToken = YOUR_ACCESS_TOKEN_AFTER_GOOGLE_LOGIN
+@refreshToken = YOUR_REFRESH_TOKEN
+
+### Sign in with Google (exchange Google ID token for app tokens)
+# @name googleAuth
+POST http://localhost:3008/api/v1/auth/google
+Content-Type: application/json
+
+{
+  "token": "YOUR_GOOGLE_ID_TOKEN"
+}
+
+### Refresh access + refresh tokens
+POST {{baseUrl}}/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+### Logout (invalidates session / blacklists tokens)
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer {{accessToken}}

@@ -1,0 +1,28 @@
+### Task: MIITAS API — Tasks (Bearer required; JWT sub = owner)
+### Run Google auth first and paste accessToken below.
+
+@baseUrl = http://localhost:3008/api/v1
+@accessToken = YOUR_ACCESS_TOKEN
+@taskId = TASK_UUID_FROM_CREATE_OR_LIST
+
+### List tasks (paginated + optional title search)
+GET http://localhost:3008/api/v1/tasks?page=1&pageSize=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhODYwNWMwNS1iZmIwLTQ5YzItYTdlNS04MzdhYzMxNGY0NDMiLCJlbWFpbCI6ImJhbWlrZWZhYWRld2FsZUBnbWFpbC5jb20iLCJzZXNzaW9uSWQiOiIyNjRmYzNjZC1lZTJmLTQ3ZWEtYjAwNC0yYzNlMjZkZmJiMDQiLCJpYXQiOjE3NzQ3MDA4NDIsImV4cCI6MTc3NDc4NzI0MiwiYXVkIjoibG9jYWxob3N0OjMwMDgiLCJpc3MiOiJsb2NhbGhvc3Q6MzAwOCJ9.Afn30NFjJCcTc5asuWhpkiM0xeN0Szl7Qi6QBQxlb6s
+
+### List tasks — search
+GET http://localhost:3008/api/v1/tasks?page=1&pageSize=10&q=my
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhODYwNWMwNS1iZmIwLTQ5YzItYTdlNS04MzdhYzMxNGY0NDMiLCJlbWFpbCI6ImJhbWlrZWZhYWRld2FsZUBnbWFpbC5jb20iLCJzZXNzaW9uSWQiOiIyNjRmYzNjZC1lZTJmLTQ3ZWEtYjAwNC0yYzNlMjZkZmJiMDQiLCJpYXQiOjE3NzQ3MDA4NDIsImV4cCI6MTc3NDc4NzI0MiwiYXVkIjoibG9jYWxob3N0OjMwMDgiLCJpc3MiOiJsb2NhbGhvc3Q6MzAwOCJ9.Afn30NFjJCcTc5asuWhpkiM0xeN0Szl7Qi6QBQxlb6s
+
+### Create task (201 + Task body)
+# @name createTask
+POST http://localhost:3008/api/v1/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhODYwNWMwNS1iZmIwLTQ5YzItYTdlNS04MzdhYzMxNGY0NDMiLCJlbWFpbCI6ImJhbWlrZWZhYWRld2FsZUBnbWFpbC5jb20iLCJzZXNzaW9uSWQiOiIyNjRmYzNjZC1lZTJmLTQ3ZWEtYjAwNC0yYzNlMjZkZmJiMDQiLCJpYXQiOjE3NzQ3MDA4NDIsImV4cCI6MTc3NDc4NzI0MiwiYXVkIjoibG9jYWxob3N0OjMwMDgiLCJpc3MiOiJsb2NhbGhvc3Q6MzAwOCJ9.Afn30NFjJCcTc5asuWhpkiM0xeN0Szl7Qi6QBQxlb6s
+Content-Type: application/json
+
+{
+  "title": "Buy groceries"
+}
+
+### Toggle task done
+PATCH {{baseUrl}}/tasks/{{taskId}}/toggle
+Authorization: Bearer {{accessToken}}
