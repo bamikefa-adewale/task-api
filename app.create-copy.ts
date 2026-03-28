@@ -27,8 +27,6 @@ export function appCreateCopy(app: INestApplication): void {
     .setTitle('Todo Task API')
     .setDescription(
       [
-        '**OAS 3.0**',
-        '',
         'REST API for Google Sign-In, token refresh/logout, and user-scoped tasks.',
         '',
         'All routes are under the global prefix **`/api/v1`** (e.g. `GET /api/v1/tasks`). Interactive docs are served at **`/api`** relative to the app root.',
